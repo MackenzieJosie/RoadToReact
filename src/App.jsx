@@ -27,28 +27,33 @@ const getTitle = (title) => {
   return title;
 }
 
-const App = () => {
-  return (
-    <div>
-      <h1>My Hacker Stories</h1>
-      {/* <h1>{welcome.greeting} {welcome.title}</h1> */}
-
-      <Search />
-
-      <hr />
-
-      <List />
-      <List />
-    </div>
-  );
-}
-
-const Search = () => (
+const App = () => (
   <div>
-    <label htmlFor="search">Search: </label>
-    <input id="search" type="text" />
+    <h1>My Hacker Stories</h1>
+    {/* <h1>{welcome.greeting} {welcome.title}</h1> */}
+
+    <Search />
+
+    <hr />
+
+    <List />
+    <List />
   </div>
 );
+
+const Search = () => {
+  const handleChange = (event) => {
+    console.log(event);
+    console.log(event.target.value);
+  };
+
+  return (
+    <div>
+      <label htmlFor="search">Search: </label>
+      <input id="search" type="text" onChange={handleChange} />
+    </div>
+  );
+};
 
 const List = () => (
   <ul>
