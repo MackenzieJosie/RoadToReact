@@ -93,7 +93,7 @@ const List = ({ list }) => (
 );
 
 const Item = ({ item }) => (
-  <li key={item.objectID}>
+  <li>
     <span>
       <a href={item.url}>{item.title}</a>
     </span>
@@ -102,5 +102,48 @@ const Item = ({ item }) => (
     <span>{item.points}</span>
   </li>
 );
+
+// Variation 2: Spread and Rest Operators
+// Final step
+// const List = ({ list }) => (
+//   <ul>
+//     {list.map(({ objectID, ...item }) => (
+//       <Item key={objectID} {...item} />
+//     ))}
+//   </ul>
+// );
+
+// const Item = ({ title, url, author, num_comments, points }) => (
+//   <li>
+//     <span>
+//       <a href={url}>{title}</a>
+//     </span>
+//     <span>{author}</span>
+//     <span>{num_comments}</span>
+//     <span>{points}</span>
+//   </li>
+// );
+
+
+
+// variation 1: nested destructuring
+// const Item = ({
+//   item: {
+//     title,
+//     url,
+//     author,
+//     num_comments,
+//     points,
+//   },
+// }) => (
+//   <li>
+//     <span>
+//       <a href={url}>{title}</a>
+//     </span>
+//     <span>{author}</span>
+//     <span>{num_comments}</span>
+//     <span>{points}</span>
+//   </li>
+// );
 
 export default App;
